@@ -5,10 +5,16 @@ from quiz_brain import QuizBrain
 question_bank = []
 
 for item in question_data:
-    question = item["question"]
+    question = item["text"]
     answer = item["answer"]
     question_object = Question(question, answer)
     question_bank.append(question_object)
 
 quizes = QuizBrain(question_bank)
+
+while quizes.still_has_questions():
+    quizes.next_question()
+
+print("You've completed the quiz!!!")
+print(f"Your final score is: {quizes.score}/{len(question_bank)}")
 
