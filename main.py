@@ -3,5 +3,7 @@ from data import question_data
 
 question_bank = []
 
-for dict in question_data:
-    question_bank.append(Question(dict["text"], dict["answer"]))
+for question_ans_pair in question_data:
+    question_object = Question(question_ans_pair["text"], question_ans_pair["answer"])
+    question_bank.append(question_object)
+
